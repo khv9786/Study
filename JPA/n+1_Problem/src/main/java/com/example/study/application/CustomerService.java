@@ -14,7 +14,7 @@ public class CustomerService {
 
     @Transactional
     public void findCustomersAndOrders() {
-        List<Customer> customers = customerRepository.findAll();
+        List<Customer> customers = customerRepository.findAllWithOrders();
         for (Customer customer : customers) {
             System.out.println("고객 ID: " + customer.getId());
             System.out.println("주문 개수: " + customer.getOrders().size());
